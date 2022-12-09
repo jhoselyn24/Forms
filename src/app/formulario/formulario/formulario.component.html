@@ -1,0 +1,30 @@
+<div class="formulario">
+        <h3 class="text-center">Formulario Desafio 3</h3>
+        <form [formGroup]="formulario" (ngSubmit)="enviarForm()" #formDirective="ngForm" class="row mt-5">
+            <div class="col-md-6">
+                <label class="form-label" for="Name">Nombre</label>
+                <input [formControl]="nameForm" class="form-control" type="text"/>
+                <app-error [control]="nameForm"></app-error>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="lastName">Apellido</label>
+                <input [formControl]="lastNameForm" class="form-control" type="text"/>
+                <app-error [control]="lastNameForm"></app-error>
+            </div>
+            <div class="col-12 mt-3">
+                <label class="form-label" for="email">E-mail</label>
+                <input [formControl]="emailForm" class="form-control" type="email" placeholder="name@example.com" />
+                <app-error [control]="emailForm"></app-error>
+            </div>
+            <div class="col-12 mt-3">
+                <label class="form-label" for="password">Contraseña</label>
+                <input [formControl]="passwordForm" class="form-control" type="password"  />
+                <app-error [control]="passwordForm"></app-error>
+            </div>
+            <div class="col-12 d-flex justify-content-center mt-3">
+                <button [disabled]="formulario.invalid" class="btn btn-primary" type="submit" (click)="enviarForm()">Enviar</button>
+            </div>
+        </form>
+
+</div>
+
